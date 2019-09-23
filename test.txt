@@ -1,3 +1,5 @@
 This is a new test file for explaining git!!!!
 This line was added directly from github.
 I am adding a new line locally.
+I am adding a new line directly from github and this should cause a conflict.
+
