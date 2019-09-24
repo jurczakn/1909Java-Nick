@@ -24,7 +24,9 @@ public class Scopes {
 		System.out.println("Inside main");
 		doStatic();
 		System.out.println("about to create instance");
-		new Scopes().doStuff(8);
+		Scopes newScope = new Scopes();
+		newScope.doStuff(8);
+		//new Scopes().doStuff(8);
 		Scopes s1 = new Scopes();
 		Scopes s2 = new Scopes();
 		s1.instanceScope = 10;
