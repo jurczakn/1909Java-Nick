@@ -1,8 +1,10 @@
 package com.revature.util;
 
+import com.revature.exception.CalculatorException;
+
 public interface Calculator <T extends Number> {
 	
-	public T add(T a, T b);
+	public T add(T a, T b) throws CalculatorException;
 	
 	public T sub(T a, T b);
 	

@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.exception.ResultTooLargeException;
 import com.revature.util.CalcImpl;
 import com.revature.util.Calculator;
 
@@ -43,6 +44,10 @@ public class CalculatorTest {
 	@Test
 	public void addTwoPositiveDoubles() {
 		assertEquals("12.0 + 17.1 should be 29.1", new Double(29.1), doubleCalc.add(12.0, 17.1));
+	}
+	@Test(expected = ResultTooLargeException.class)
+	public void addTooLargeIntegers() {
+		intCalc.add(Integer.MAX_VALUE, 1);
 	}
 
 }
