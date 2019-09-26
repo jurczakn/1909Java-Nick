@@ -1,6 +1,7 @@
 package com.revature.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,6 +51,14 @@ public class LoanServiceTest {
 		loan.setPeriod(Loan.Period.MONTHLY);
 		loan.setPrinciple(1000);
 		loan.setLength(3);
+		when(calc.mult(.05, 3.0)).thenReturn(.15);
+		when(calc.add(1.0, .15)).thenReturn(1.15);
+		when(calc.mult(1000.0, 1.15)).thenReturn(1150.0);
+		when(calc.mult(3.0, 12.0)).thenReturn(36.0);
+		when(calc.div(1150.0, 36.0)).thenReturn(31.9444444);
+		when(calc.mult(31.9444444, 100.0)).thenReturn(3194.44444);
+		when(calc.div(3194.0, 100.0)).thenReturn(31.94);
+		loanService.setCalc(calc);
 		assertEquals("Payments should equal 31.94", new Double(31.94), loanService.calculatePaymentAmount(loan));
 
 	}
