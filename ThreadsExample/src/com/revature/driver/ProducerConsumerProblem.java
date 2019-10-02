@@ -21,6 +21,12 @@ public class ProducerConsumerProblem {
 		c.setQueue(q);
 		
 		p.start();
+		try {
+			Thread.currentThread().sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		c.start();
 		
 	}
