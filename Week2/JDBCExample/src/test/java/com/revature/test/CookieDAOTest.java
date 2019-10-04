@@ -42,10 +42,14 @@ public class CookieDAOTest {
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		
+		ConnectionFactory.getConnection().createStatement().executeUpdate("truncate table cookie");
+		
 	}
 
 	@Before
 	public void setUp() throws Exception {
+		
 		
 		when(conn.createStatement()).thenReturn(stmt);
 		
