@@ -4,6 +4,7 @@ import static org.mockito.Mockito.when;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -31,8 +32,8 @@ public class CookieDAOTest {
 	@Mock
 	private Connection conn;
 	
-	@Mock
-	private BaseStatement stmt;
+	@Spy
+	private BaseStatement stmt = (BaseStatement) ConnectionFactory.getConnection().createStatement();
 	
 
 	@BeforeClass
@@ -72,6 +73,10 @@ public class CookieDAOTest {
 		}
 		
 		
+	}
+	
+	public CookieDAOTest() throws SQLException {
+		super();
 	}
 
 }
