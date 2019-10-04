@@ -43,7 +43,7 @@ public class PreparedDriver {
 		} else {
 			System.out.println("what is your username?");
 			String username = sc.nextLine();
-			System.out.println(userDao.getUserByUsername(username));
+
 		}
 
 	}
