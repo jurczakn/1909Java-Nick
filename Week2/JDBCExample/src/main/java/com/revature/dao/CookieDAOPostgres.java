@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.revatue.pojo.Cookie;
@@ -16,6 +17,15 @@ public class CookieDAOPostgres implements CookieDAO {
 	
 	@Override
 	public void createCookie(Cookie cookie) {
+		
+		String sql = "insert into cookie (flavor, delciousness) values('"+cookie.getFlavor()+"', "+cookie.getDeliciousness()+")";
+		
+		try {
+			conn.createStatement().executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
