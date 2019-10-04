@@ -65,6 +65,8 @@ public class CookieDAOTest {
 		cookie.setFlavor("choco chip");
 		cookie.setDeliciousness(10);
 		
+		cookieDao.createCookie(cookie);
+		
 		try {
 			Mockito.verify(stmt).executeUpdate("insert into cookie (flavor, delciousness) values('choco chip', 10)");
 		} catch (SQLException e) {
