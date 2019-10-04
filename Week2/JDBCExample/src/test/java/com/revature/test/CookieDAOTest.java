@@ -1,37 +1,38 @@
 package com.revature.test;
 
-import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.postgresql.core.BaseStatement;
 
 import com.revatue.pojo.Cookie;
 import com.revature.dao.CookieDAOPostgres;
 import com.revature.jdbc.util.ConnectionFactory;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class CookieDAOTest {
 	
-	private CookieDAOPostgres cookieDao;
+	private CookieDAOPostgres cookieDao = new CookieDAOPostgres();
 	
 	private Cookie cookie;
 	
 	@Mock
 	private Connection conn;
 	
-	@Spy
-	private Statement stmt;
+	@Mock
+	private BaseStatement stmt;
 	
 
 	@BeforeClass
@@ -44,8 +45,6 @@ public class CookieDAOTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
-		stmt = ConnectionFactory.getConnection().createStatement();
 		
 		when(conn.createStatement()).thenReturn(stmt);
 		
