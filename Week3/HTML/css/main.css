@@ -1,0 +1,8 @@
+.text-content {
+    border: 7px;
+    border-style: ridge;
+    border-color: plum;
+    padding: 25px;
+    margin: 75px;
+    color: blanchedalmond;
+}

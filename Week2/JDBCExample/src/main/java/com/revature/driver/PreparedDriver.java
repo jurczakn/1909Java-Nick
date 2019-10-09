@@ -38,8 +38,10 @@ public class PreparedDriver {
 
 			String password = sc.nextLine();
 			
-			userDao.preparedUpdatePassword(new User(-1, username, password));
+			//userDao.preparedUpdatePassword(new User(-1, username, password));
 
+			userDao.updatePassword(new User(-1, username, password));
+			
 		} else {
 			System.out.println("what is your username?");
 			String username = sc.nextLine();

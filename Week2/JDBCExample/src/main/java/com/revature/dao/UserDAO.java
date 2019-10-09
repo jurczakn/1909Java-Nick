@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 
 import com.revatue.pojo.User;
 import com.revature.jdbc.util.ConnectionFactory;
@@ -77,7 +78,17 @@ public class UserDAO {
 		String sql = "update user_table set password = '" + u.getPassword() + "' where username = '" + u.getUsername() + "'";
 		
 		try {
-			conn.createStatement().executeUpdate(sql);
+			conn.setAutoCommit(false);
+			Savepoint sp = conn.setSavepoint("Before update");
+			int numberofRows = conn.createStatement().executeUpdate(sql);
+			
+			if (numberofRows > 1) {
+				conn.rollback(sp);
+				System.out.println("Too many rows affected you hacker :[");
+			}
+			conn.commit();
+			conn.setAutoCommit(true);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
