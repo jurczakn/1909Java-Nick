@@ -2,6 +2,8 @@
 * Let's do some JavaScript
 */
 
+console.log(`x: ${x}`)
+
 alert("Hello");
 
 var a, b, c, d, e, f, g, h, i;
@@ -100,5 +102,40 @@ var myRobot = new Robot(
 var BipedalCleaningRobot = function(){};
 BipedalCleaningRobot.prototype = new Robot();
 BipedalCleaningRobot.prototype.clean = function(){console.log("I am sweeping with a broom and walking on two legs")};
+
+/* var y = 20;
+
+console.log(`y before: ${y}`)
+
+function doStuff(){
+    var x = 10;
+    y = x;
+}
+
+doStuff();
+
+console.log(`y after ${y}`);
+
+x = 56;
+
+console.log(x); */
+
+//console.log(`x value outside doStuff: ${x}`)
+
+console.log("---------------------------------------------------");
+
+var y;
+
+y = 27;
+
+y = x;
+
+var x = 27;
+
+console.log(x==y);
+
+var x = 99;
+
+
 
 
