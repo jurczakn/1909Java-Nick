@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+<body>
+    <form id="mediaPostForm">
+        <label for="message">Message: </label>
+        <input type="text" name="message" id="message"/>
+        <br>
+        <label for="style">Style: </label>
+        <input type="radio" name="style" value="simple">Simple
+        <br>
+        <input type="radio" name="style" value="bold">Bold
+        <br>
+        <input type="radio" name="style" value="italicized">Italicized
+        <br>
+        <label for="author">Author: </label>
+        <input type="text" name="author" id="author"/>
+        <button id="submitForm">Submit Post</button>
+    </form>
+    <p id="display"></p>
+    <script src='js/main.js'></script>
+</body>
+</html>
