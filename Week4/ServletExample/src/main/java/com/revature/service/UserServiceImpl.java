@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 		
 		User user = userDao.getUser(username);
 		
-		if (user.getPassword().equals(password)) {
+		if ((user != null) && (user.getPassword().equals(password))) {
 			return user;
 		}
 		
