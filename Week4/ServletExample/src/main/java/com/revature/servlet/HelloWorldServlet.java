@@ -1,4 +1,4 @@
-package com.revature.sevlet;
+package com.revature.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,6 +23,7 @@ public class HelloWorldServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		System.out.println("Hello Post!!!!!");
+		resp.getWriter().write("THis is a post method trust me");
 	}
 
 }

@@ -12,11 +12,44 @@
   
   <servlet>
   	<servlet-name>HelloServlet</servlet-name>
-  	<servlet-class>com.revature.sevlet.HelloWorldServlet</servlet-class>
+  	<servlet-class>com.revature.servlet.HelloWorldServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>HelloServlet</servlet-name>
   	<url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>LifecycleServlet</servlet-name>
+  	<servlet-class>com.revature.servlet.LifecycleServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>LifecycleServlet</servlet-name>
+	<url-pattern>/life</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Redirect</servlet-name>
+  	<servlet-class>com.revature.servlet.RedirectServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Redirect</servlet-name>
+  	<url-pattern>/redirect</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>Forward</servlet-name>
+  	<servlet-class>com.revature.servlet.ForwardServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Forward</servlet-name>
+  	<url-pattern>/forward</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
