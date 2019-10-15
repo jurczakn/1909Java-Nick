@@ -53,39 +53,42 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
-  <!-- Servlet Context, is available to ALL servlets -->
   <context-param>
-  	<param-name>message</param-name>
-  	<param-value>Welcome to our website </param-value>
+    <param-name>message</param-name>
+    <param-value>Welcome to our website </param-value>
   </context-param>
-  
   <servlet>
-  	<servlet-name>EmpHome</servlet-name>
-  	<servlet-class>com.revature.servlet.HomeServlet</servlet-class>
-  	<!-- Servlet Config, is available to a specific servlet -->
-  	<init-param>
-  		<param-name>role</param-name>
-  		<param-value>employee</param-value>
-  	</init-param>
+    <servlet-name>EmpHome</servlet-name>
+    <servlet-class>com.revature.servlet.HomeServlet</servlet-class>
+    <init-param>
+      <param-name>role</param-name>
+      <param-value>employee</param-value>
+    </init-param>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>EmpHome</servlet-name>
-	<url-pattern>/emp</url-pattern>	
+    <servlet-name>EmpHome</servlet-name>
+    <url-pattern>/emp</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  	<servlet-name>ManHome</servlet-name>
-  	<servlet-class>com.revature.servlet.HomeServlet</servlet-class>
-  	<init-param>
-  		<param-name>role</param-name>
-  		<param-value>manager</param-value>
-  	</init-param>
+    <servlet-name>ManHome</servlet-name>
+    <servlet-class>com.revature.servlet.HomeServlet</servlet-class>
+    <init-param>
+      <param-name>role</param-name>
+      <param-value>manager</param-value>
+    </init-param>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>ManHome</servlet-name>
-  	<url-pattern>/man</url-pattern>
+    <servlet-name>ManHome</servlet-name>
+    <url-pattern>/man</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FurnitureServlet</display-name>
+    <servlet-name>FurnitureServlet</servlet-name>
+    <servlet-class>com.revature.servlet.FurnitureServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FurnitureServlet</servlet-name>
+    <url-pattern>/furniture</url-pattern>
   </servlet-mapping>
 </web-app>
