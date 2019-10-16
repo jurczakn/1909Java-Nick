@@ -89,6 +89,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>FurnitureServlet</servlet-name>
-    <url-pattern>/furniture</url-pattern>
+    <url-pattern>/furniture/*</url-pattern>
   </servlet-mapping>
 </web-app>

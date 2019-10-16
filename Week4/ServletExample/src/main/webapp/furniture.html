@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Furniture</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <div>
+        <h1>Furniture List</h1>
+        <br>
+        <ol id="furnitureList">
+
+        </ol>
+    </div>
+    <div>
+        <input id="search-name" placeholder="Enter name to search"/>
+        <br>
+        <p id="search-result"></p>
+        <button id="search-button">Search</button>
+    </div>
+    <div>
+        <h1>Add a piece of furniture</h1>
+        <br>
+        <input id="name" name="name" placeholder="name"/>
+        <br>
+        <input id="type" name="type" placeholder="type"/>
+        <br>
+        <input id="manufacturer" name="manufacturer" placeholder="manufacturer"/>
+        <br>
+        <input type="number" id="difficulty" name="difficulty" placeholder="difficulty"/>
+        <br>
+        <input type="number" id="cost" name="cost" placeholder="cost"/>
+        <br>
+        <input id="owner" name="owner" placeholder="owner" required/>
+        <br>
+        <button id="postFurniture">Create Furniture</button>
+        <br>
+        <p id="result"></p>
+    </div>
+    <script src='javascript/furniture.js'></script>
+</body>
+</html>

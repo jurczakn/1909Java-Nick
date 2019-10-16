@@ -20,4 +20,9 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+	public User getUserByUsername(String username) {
+		// TODO Auto-generated method stub
+		return userDao.getUser(username);
+	}
+
 }

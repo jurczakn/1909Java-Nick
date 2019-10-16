@@ -19,4 +19,12 @@ public class FurnitureService {
 		furnitureDao.createFurniture(furniture);
 	}
 	
+	public List<Furniture> findAllFurniture() {
+		return furnitureDao.getAllFurnitures();
+	}
+	
+	public Furniture findByName(String name) {
+		return furnitureDao.getFurniture(name);
+	}
+	
 }

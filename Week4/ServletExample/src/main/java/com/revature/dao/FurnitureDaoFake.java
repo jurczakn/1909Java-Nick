@@ -39,7 +39,7 @@ public class FurnitureDaoFake implements FurnitureDao {
 	}
 
 	public List<Furniture> getAllFurnitures() {
-		return null;
+		return furnitureRepository;
 	}
 
 	public void updateFurniture(Furniture furniture) {
