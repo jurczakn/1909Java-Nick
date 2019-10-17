@@ -1,0 +1,94 @@
+<div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{title}}</span>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right"> Interpolation {{interpolationNotation}}</span>
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right">
+                    Used for <strong>one-way</strong> databinding to a <strong>value</strong>.
+                </span>
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right">
+                    You can also <strong>evaluate</strong> using <strong>{{interpolationNotation}}</strong>
+                    notation as well.
+                </span>
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right">
+                    44 + 26 <strong>=</strong> {{44+26}}
+                </span>
+            </div>
+        </div>
+        <div class="panel-heading">
+            <span class="label label-default label-center">Property Binding {{propertyNotation}}</span>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <div class="list-group-item">
+                    <span class="glyphicon glyphicon-arrow-right">
+                        Change the attributes of a node on the change of a property
+                    </span>
+                </div>
+                <div class="list-group-item">
+                    <span class="glyphicon glyphicon-arrow-right">
+                        <div [ngStyle]='objectStyle' (click)='changeStyle()'>
+                            Look at the style
+                        </div>
+                    </span>
+                </div>
+                <div class="list-group-item">
+                    <span class="glyphicon glyphicon-arrow-right">
+                        Another way to do one-way databinding
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <span class="label label-center label-default">Event Binding {{eventNotation}}</span>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right"> Used to handle events</span>
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right">
+                    click the button to increment the value: {{counter}}
+                </span>
+                <div (click)="addToCounter()">
+                    <button class="btn btn-primary btn-center">Increment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <span class="label label-center label-default">Two Way DataBinding {{twoWayNotation}}</span>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right">
+                    Allows use to display changes in TS in template, and changes in template in TS.
+                </span>
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right">
+                   <input [(ngModel)]="inputValue"/>
+                </span>
+            </div>
+            <div class="list-group-item">
+                    <span class="glyphicon glyphicon-arrow-right">
+                       Value: {{inputValue}}
+                    </span>
+                    <div (click)="inputValue=''">
+                        <button class="btn btn-center btn-primary">Clear Input</button>
+                    </div>
+                </div>
+        </div>
+    </div>

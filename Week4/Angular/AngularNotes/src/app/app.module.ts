@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 
+import { FormsModule } from '@angular/forms';
+
 // Components
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -53,7 +55,8 @@ import { StructuralComponent } from './components/structural/structural.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
