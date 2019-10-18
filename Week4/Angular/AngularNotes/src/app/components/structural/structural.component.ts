@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructuralComponent implements OnInit {
 
+  spaghettiList: Array<String> = [`penne`, `angel hair`, `shells`, `elbows`, `spaghetti`];
+
   constructor() { }
 
   ngOnInit() {

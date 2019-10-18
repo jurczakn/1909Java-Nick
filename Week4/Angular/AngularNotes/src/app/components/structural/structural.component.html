@@ -1,0 +1,44 @@
+<div class="panel-heading">
+    <span class="label label-default label-center">
+        Structural Directives
+    </span>
+</div>
+<div class="panel-body">
+    <div class="list-group">
+        <div class="list-group-item">
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                Change the physical structure of the HTML page
+            </span>
+        </div>
+        <div class="list-group-item">
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                Allways begins with <strong>*</strong> character
+            </span>
+        </div>
+        <div class="list-group-item">
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                Includes *ngFor, *ngIf, *ngSwitch
+            </span>
+        </div>
+        <div class="list-group-item">
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                *ngFor allows us to loop through an array
+            </span>
+        </div>
+        <div class="list-group-item">
+            <span>
+                <div *ngFor="let s of spaghettiList; let i = index">
+                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                        {{i + 1}}: {{s}} <button class="btn btn-primary" (click)="spaghettiList.splice(i, 1)">X</button>
+                    </span>
+                </div>
+            </span>
+        </div>
+        <div class="list-group-item">
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                <input [(ngModel)]="newSpeghetti" placeholder="Enter new speghetti here"/>
+                <button class="btn btn-primary" (click)="spaghettiList.push(newSpeghetti)">Add to List</button>
+            </span>
+        </div>
+    </div>
+</div>
