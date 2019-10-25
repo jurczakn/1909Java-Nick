@@ -10,5 +10,9 @@
 		<property name="hibernate.connection.username"></property>
 		<property name="hibernate.connection.password"></property> -->
 		
+		<property name="hibernate.connection.pool_size">5</property>
+		
+		<mapping class="com.revature.domains.HoneyPot"/>
+		
 	</session-factory>
 </hibernate-configuration>
