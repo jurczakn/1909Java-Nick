@@ -1,0 +1,12 @@
+<h2>Look up Pokemans</h2>
+<input [(ngModel)]="id" type="text"/>
+<button class="btn btn-primary"  (click)="getPokemon()">Get Poke</button>
+<div *ngIf="myPokemon != null">
+    <p>Name: {{myPokemon.name}}</p>
+    <p>Height: {{myPokemon.height}}</p>
+    <p>Weight: {{myPokemon.weight}}</p>
+    <p>abilites:</p>
+    <p>{{myPokemon.abilities[0].ability.name}}</p>
+    <p>Id: {{myPokemon.id}}</p>
+    
+</div>

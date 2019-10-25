@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LoggingService } from 'src/app/service/logging.service';
 
 @Component({
   selector: 'app-success',
@@ -18,11 +19,12 @@ export class SuccessComponent implements OnInit {
   notifyOnClose: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   closeMessage(): void {
+    this.logger.log('info', 'The success block was closed by itself');
     this.notifyOnClose.emit(true);
     this.closed = true;
   }
 
-  constructor() { }
+  constructor(private logger: LoggingService) { }
 
   ngOnInit() {
   }

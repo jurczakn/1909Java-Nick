@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggingService } from 'src/app/service/logging.service';
 
 @Component({
   selector: 'app-alerts',
@@ -10,10 +11,11 @@ export class AlertsComponent implements OnInit {
   successClosed = false;
 
   onNotify(message: boolean) {
+    this.logger.log('warn', 'the success box was closed by something else');
     this.successClosed = message;
   }
 
-  constructor() { }
+  constructor(private logger: LoggingService) { }
 
   ngOnInit() {
   }
