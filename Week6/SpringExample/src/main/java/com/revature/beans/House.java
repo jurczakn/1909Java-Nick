@@ -1,11 +1,18 @@
 package com.revature.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class House {
 	
 	private String name;
 	
 	private String owner;
 	
+	//@Autowired // -- do not put on field, this uses field injection
+	//@Qualifier("roof")
 	private Roof roof;
 
 	public String getName() {
@@ -28,8 +35,11 @@ public class House {
 		return roof;
 	}
 
-	public void setRoof(Roof roof) {
-		this.roof = roof;
+	@Autowired  // -- will do setter injection
+	//@Inject
+	//@Resource
+	public void setRoof(Roof brokenRoof) {
+		this.roof = brokenRoof;
 	}
 
 	@Override
@@ -81,6 +91,11 @@ public class House {
 		this.roof = roof;
 	}
 
+	//@Autowired  -- used constructor injection
+	public House(Roof roof) {
+		this.roof = roof;
+	}
+	
 	public House() {
 		super();
 	}

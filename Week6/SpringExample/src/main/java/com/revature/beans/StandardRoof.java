@@ -1,5 +1,8 @@
 package com.revature.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component("roof")
 public class StandardRoof implements Roof{
 
 	private boolean weatherproofing;

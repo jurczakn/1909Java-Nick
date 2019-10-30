@@ -1,5 +1,8 @@
 package com.revature.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component("brokenRoof")
 public class BrokenRoof implements Roof {
 
 	@Override

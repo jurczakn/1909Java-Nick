@@ -24,7 +24,7 @@ public class BeanDriver {
 		 * System.out.println(house);
 		 */
 		//Spring Way
-		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext ac = new ClassPathXmlApplicationContext("annotate.xml");
 		House house = (House) ac.getBean("house");
 		log.info(house.toString());
 		house.setName("Brian's House");
@@ -34,9 +34,9 @@ public class BeanDriver {
 		House house2 = (House) ac.getBean("house");
 		house2.setName("Brian's Other House");
 		house2.setOwner("Carlos");
-		house2.setRoof(new StandardRoof());
-		((StandardRoof)house2.getRoof()).setShingles("no");
-		((StandardRoof)house2.getRoof()).setSolarPanels(false);
+		//house2.setRoof(new StandardRoof());
+		//((StandardRoof)house2.getRoof()).setShingles("something");
+		//((StandardRoof)house2.getRoof()).setSolarPanels(false);
 		log.info("House 2 :" +house2);
 		log.info("House 1:" +house);
 		
