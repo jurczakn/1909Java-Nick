@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="house" class="com.revature.beans.House" scope="prototype">
-		<property name="roof" ref="standardRoof"></property>
+		<property name="roof" ref="brokenRoof"></property>
 	</bean>
 	
 	<bean id="standardRoof" class="com.revature.beans.StandardRoof" scope="prototype">
@@ -12,5 +12,6 @@
 		<property name="shingles" value="yes"></property>
 		<property name="solarPanels" value="true"></property>
 	</bean>
+	<bean id="brokenRoof" class="com.revature.beans.BrokenRoof"></bean>
 	
 </beans>
