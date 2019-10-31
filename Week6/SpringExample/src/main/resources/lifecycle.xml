@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="myLifecycleBean" class="com.revature.beans.LifecycleBean" destroy-method="myCustomDestroy" init-method="myCustomInit">
+		<property name="secret" value="very secret"></property>
+	</bean>
+	
+	<bean id="house" class="com.revature.beans.House" scope="prototype">
+		<property name="roof" ref="brokenRoof"></property>
+	</bean>
+	
+	<bean id="standardRoof" class="com.revature.beans.StandardRoof" scope="prototype">
+		<property name="weatherproofing" value="true"></property>
+		<property name="shingles" value="yes"></property>
+		<property name="solarPanels" value="true"></property>
+	</bean>
+	<bean id="brokenRoof" class="com.revature.beans.BrokenRoof"/>
+	
+</beans>
