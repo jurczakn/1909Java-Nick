@@ -13,7 +13,7 @@ public class HelloWorldController {
 
 	private static Logger log = Logger.getLogger("HelloWorldControllerLogger");
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET, value = "/hello")
 	public @ResponseBody String getHelloWorld() {
 		log.info("Hello World!");
 		return "Hello World!";
