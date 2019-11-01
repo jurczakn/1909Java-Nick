@@ -1,9 +1,18 @@
 package com.revature.pojo;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class User {
 	
+	@NotEmpty(message = "Username cannot be empty")
+	@Pattern(regexp = "\\w+", message = "Must start with a letter[a-z, A-Z]")
+	@Size(min = 3, max = 75, message = "Must be between 3 and 75 characters")
 	private String username;
 	
+	@NotEmpty(message = "Password must not be empty")
 	private String password;
 	
 	private String fullName;
