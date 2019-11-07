@@ -3,8 +3,12 @@ package com.revature.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.bean.Laptop;
@@ -21,9 +25,10 @@ public class LaptopControllerImpl implements LaptopController {
 	}
 	
 	@Override
-	public Laptop createLaptop(Laptop laptop) {
-		// TODO Auto-generated method stub
-		return null;
+	@PostMapping("/laptop")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Laptop createLaptop(@RequestBody Laptop laptop) {
+		return laptopService.makeLaptop(laptop);
 	}
 
 	@Override
@@ -33,9 +38,9 @@ public class LaptopControllerImpl implements LaptopController {
 	}
 
 	@Override
-	public Laptop repairLaptop(Laptop laptop) {
-		// TODO Auto-generated method stub
-		return null;
+	@PostMapping("/laptop/{serialNumber}/repair")
+	public Laptop repairLaptop(@PathVariable String serialNumber) {
+		return laptopService.fixLaptop(laptopService.getLaptop(serialNumber).get());
 	}
 
 	@Override
