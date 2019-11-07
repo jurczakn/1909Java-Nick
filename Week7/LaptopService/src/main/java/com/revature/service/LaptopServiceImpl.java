@@ -26,8 +26,7 @@ public class LaptopServiceImpl implements LaptopService {
 
 	@Override
 	public void throwLaptop(Laptop laptop) {
-		// TODO Auto-generated method stub
-
+		laptopRepo.delete(laptop);
 	}
 
 	@Override
@@ -42,9 +41,13 @@ public class LaptopServiceImpl implements LaptopService {
 	}
 
 	@Override
-	public List<Laptop> getLaptopByManufacturer(String manufacturer) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Laptop> getLaptopsByManufacturer(String manufacturer) {
+		return laptopRepo.findAllByManufacturer(manufacturer);
+	}
+
+	@Override
+	public List<Laptop> getAllLaptops() {
+		return laptopRepo.findAll();
 	}
 
 }

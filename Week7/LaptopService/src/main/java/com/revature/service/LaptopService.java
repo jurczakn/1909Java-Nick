@@ -15,6 +15,8 @@ public interface LaptopService {
 	
 	public Laptop fixLaptop(Laptop laptop);
 	
-	public List<Laptop> getLaptopByManufacturer(String manufacturer);
+	public List<Laptop> getLaptopsByManufacturer(String manufacturer);
+	
+	public List<Laptop> getAllLaptops();
 	
 }

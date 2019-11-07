@@ -1,9 +1,11 @@
 package com.revature.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,9 +34,9 @@ public class LaptopControllerImpl implements LaptopController {
 	}
 
 	@Override
+	@DeleteMapping("/laptop")
 	public void deleteLaptop(Laptop laptop) {
-		// TODO Auto-generated method stub
-
+		laptopService.throwLaptop(laptop);
 	}
 
 	@Override
@@ -53,6 +55,18 @@ public class LaptopControllerImpl implements LaptopController {
 		}
 		
 		return null;
+	}
+
+	@Override
+	@GetMapping("/manufacturer/{manufacturer}/laptop")
+	public List<Laptop> getLaptopByManufacturer(@PathVariable String manufacturer) {
+		return laptopService.getLaptopsByManufacturer(manufacturer);
+	}
+
+	@Override
+	@GetMapping("/laptop")
+	public List<Laptop> getAllLaptops() {
+		return laptopService.getAllLaptops();
 	}
 
 }

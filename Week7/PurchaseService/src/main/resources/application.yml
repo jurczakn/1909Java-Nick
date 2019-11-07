@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: purchase-service
+  jpa:
+    hibernate:
+      ddl-auto: create
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+server:
+  port: 10002
+  
+
