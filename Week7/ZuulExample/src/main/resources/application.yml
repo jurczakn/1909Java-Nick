@@ -1,0 +1,31 @@
+#Zuul Configuration
+spring:
+  application:
+    name: zuul
+server:
+  port: 10000
+  
+#Local Routes
+#zuul:
+#  routes:
+#    purchase:
+#      url: http://localhost:10002
+#      strip-prefix: true
+#    laptop:
+#      url: http://localhost:10001
+#      strip-prefix: true
+
+#Full Discovery Routes Through Eureka
+zuul:
+  routes:
+    purchase:
+      path: /purchase/**
+      service-id: purchase-service
+    laptop:
+      path: /laptop/**
+      service-id: laptop-service
+    
+eureka:
+  client:
+    service-url:
+      default-zone: localhost:8761/eureka
