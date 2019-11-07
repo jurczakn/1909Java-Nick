@@ -7,13 +7,13 @@ import com.revature.bean.Laptop;
 
 public interface LaptopService {
 	
-	public void makeLaptop(Laptop laptop);
+	public Laptop makeLaptop(Laptop laptop);
 	
 	public void throwLaptop(Laptop laptop);
 	
 	public Optional<Laptop> getLaptop(String serialNumber);
 	
-	public void fixLaptop(Laptop laptop);
+	public Laptop fixLaptop(Laptop laptop);
 	
 	public List<Laptop> getLaptopByManufacturer(String manufacturer);
 	

@@ -1,7 +1,11 @@
 package com.revature.test;
 
+import static org.hamcrest.CoreMatchers.everyItem;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -29,6 +33,8 @@ class LaptopServiceImplTest {
 	
 	@InjectMocks
 	LaptopServiceImpl laptopServiceImpl = new LaptopServiceImpl();
+	
+	Laptop newLaptop;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -40,6 +46,7 @@ class LaptopServiceImplTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		newLaptop = new Laptop("testSerial", "Dell", "HP", 5.00, "some parts", 1, "yesterday", true);
 	}
 
 	@AfterEach
@@ -53,7 +60,9 @@ class LaptopServiceImplTest {
 
 	@Test
 	void testMakeLaptop() {
-		fail("Not yet implemented");
+		when(laptopRepo.save(newLaptop)).thenReturn(newLaptop);
+		assertEquals(newLaptop, laptopServiceImpl.makeLaptop(newLaptop));
+		verify(laptopRepo).save(newLaptop);
 	}
 
 	@Test
@@ -63,14 +72,16 @@ class LaptopServiceImplTest {
 
 	@Test
 	void testGetLaptop() {
-		Laptop newLaptop = new Laptop("testSerial", "Dell", "HP", 5.00, "some parts", 1, "yesterday", true);
 		when(laptopRepo.findById("testSerial")).thenReturn(Optional.of(newLaptop));
 		assertEquals(Optional.of(newLaptop), laptopServiceImpl.getLaptop("testSerial"));
 	}
 
 	@Test
 	void testFixLaptop() {
-		fail("Not yet implemented");
+		when(laptopRepo.save(newLaptop)).thenReturn(newLaptop);
+		assertEquals(newLaptop, laptopServiceImpl.fixLaptop(newLaptop));
+		verify(laptopRepo).save(newLaptop);
+		assertFalse(newLaptop.isBroken());
 	}
 
 	@Test

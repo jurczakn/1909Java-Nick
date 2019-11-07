@@ -20,9 +20,8 @@ public class LaptopServiceImpl implements LaptopService {
 	}
 
 	@Override
-	public void makeLaptop(Laptop laptop) {
-		// TODO Auto-generated method stub
-
+	public Laptop makeLaptop(Laptop laptop) {
+		return laptopRepo.save(laptop);
 	}
 
 	@Override
@@ -37,9 +36,9 @@ public class LaptopServiceImpl implements LaptopService {
 	}
 
 	@Override
-	public void fixLaptop(Laptop laptop) {
-		// TODO Auto-generated method stub
-
+	public Laptop fixLaptop(Laptop laptop) {
+		laptop.setBroken(false);
+		return laptopRepo.save(laptop);
 	}
 
 	@Override
