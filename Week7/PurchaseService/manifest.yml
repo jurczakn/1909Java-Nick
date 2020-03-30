@@ -1,0 +1,4 @@
+applications:
+- name: njj-purchase-service
+  path: target/PurchaseService-0.0.1-SNAPSHOT.jar
+  memory: 1G
